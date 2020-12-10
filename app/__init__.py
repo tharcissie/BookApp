@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from flask_simplemde import SimpleMDE
+from flask_mail import Mail
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -14,11 +15,13 @@ bootstrap = Bootstrap()
 db = SQLAlchemy()
 photos = UploadSet('photos',IMAGES)
 simple = SimpleMDE()
+mail = Mail()
 
 def create_app(configuration):
     app = Flask(__name__)
     app.url_map.strict_slashes = False
     simple.init_app(app)
+    mail.init_app(app)
 
     # Creating the app configurations
     app.config.from_object(config_options[configuration])
@@ -27,6 +30,7 @@ def create_app(configuration):
     bootstrap = Bootstrap(app)
     db.init_app(app)
     login_manager.init_app(app)
+    mail.init_app(app)
 
     # Registering the blueprint
     from .main import main as main_blueprint
