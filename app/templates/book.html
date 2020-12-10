@@ -6,8 +6,7 @@
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <h3>{{ book.title }}</h3>
     <p>{{book.book_description}}</p>
-mnhb
-    
+
 </div>
 <div class="row">
 
@@ -15,6 +14,7 @@ mnhb
     <hr>
 
     {% if reviews %}
+    
         {{macro.displayReviews(reviews)}}
 
     {% else%}

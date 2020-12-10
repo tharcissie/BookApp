@@ -56,11 +56,11 @@ def process_results(book_list):
         author = item['volumeInfo'].get('authors') 
         book_description = item['volumeInfo'].get('description')
         thumbnail = item['volumeInfo']['imageLinks']['thumbnail']
-        webReaderLink = item['accessInfo']['webReaderLink']
-
+        webReaderLink = item['volumeInfo'].get('previewLink')
+        page = item['volumeInfo'].get('pageCount')
 
         if thumbnail:
-            book_object = Book(id,title,author,book_description,thumbnail,webReaderLink)
+            book_object = Book(id,title,author,book_description,thumbnail,webReaderLink,page)
             print(book_object.author)
             book_results.append(book_object)
 
@@ -90,11 +90,12 @@ def get_book(id):
                 author = item['volumeInfo'].get('authors') 
                 book_description = item['volumeInfo'].get('description')
                 thumbnail = item['volumeInfo']['imageLinks']['thumbnail']
-                webReaderLink = item['accessInfo']['webReaderLink']
+                webReaderLink = item['volumeInfo'].get('previewLink')
+                page = item['volumeInfo'].get('pageCount')
 
          
                 if thumbnail:
-                    book_object = Book(id,title,author,book_description,thumbnail,webReaderLink)
+                    book_object = Book(id,title,author,book_description,thumbnail,webReaderLink,page)
            
            
     return book_object

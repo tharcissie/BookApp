@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Book:
 
-    def __init__(self,id,title,author,book_description,thumbnail,webReaderLink):
+    def __init__(self,id,title,author,book_description,thumbnail,webReaderLink,page):
 
         self.id =id
         self.author = author
@@ -15,6 +15,7 @@ class Book:
         self.book_description = book_description
         self.thumbnail = thumbnail
         self.webReaderLink = webReaderLink
+        self.page = page
         
 @login_manager.user_loader
 def load_user(user_id):
