@@ -13,12 +13,13 @@
     <h1>Reviews</h1>
     <hr>
 
-    {% if reviews %}
+    {% if new_book %}
     
-        {{macro.displayReviews(reviews)}}
+        {{macro.displayReviews(new_book)}}
+        <a class="btn btn-success btn-lg text-center" href="/book/review/new/{{book.id}}"> Write a new review</a>
 
     {% else%}
-        <h3 class="text-center">This movie has no reviews </h3>
+        <h3 class="text-center">This book has no reviews </h3>
 
         <a class="btn btn-success btn-lg text-center" href="/book/review/new/{{book.id}}"> Write a new review</a>
     {% endif %}
