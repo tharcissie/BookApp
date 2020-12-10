@@ -2,16 +2,27 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block content %}
+
+
+<div style="background-image: url('https://res.cloudinary.com/auca/image/upload/v1607622677/book_epnekv.png');background-size: cover; height: 120vh; background-position: center;margin-top: -0.10cm;">
+
+
     <div class="container">
-
         
+<div class="row justify-content-center">
 
-        <div class="col-md-4">
-
-            {{ wtf.quick_form(review_form) }}
-            {{simplemde.load}}
+ <div class="col-7">
+    <h2 class="p-3 text-center font-weight-bold" style="color:  #2A9D8F;">WRITE A REVIEW</h2>
+    <div class="card mb-3">
+           
+        <div class="card-body">
+          <h5 class="card-title">{{ wtf.quick_form(review_form) }}</h5>
+          <p class="card-text">{{simplemde.load}}</p>
+        </div>        
         </div>
-
-    </div>
-
+      </div>
+ </div>
+        
+</div>            
+</div>
 {% endblock %}
