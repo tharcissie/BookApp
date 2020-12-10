@@ -9,13 +9,13 @@
 
       {% if user.profile_pic_path %}
       <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail"
-        style="width: 370px;height: 280px;margin-top: 100px;">
+        style="width: 373px;height: 280px;margin-top: 100px;">
       {%else%}
-      <p style="margin-top: 230px; text-align: center;font-weight: bold;font-size: 30px;">Add Profile Picture</p>
+      <p style="margin-top: 320px; text-align: center;font-weight: bold;font-size: 30px;">Add Profile Picture</p>
       {% endif %}
       {% if user == current_user %}
       <form action="{{url_for('main.update_pic',name=user.username)}}" method="post" enctype="multipart/form-data">
-        <input type="file" name="photo" class="form-control" style="width: 373px;margin-top:105px" required>
+        <input type="file" name="photo" class="form-control" style="width: 373px;" required>
         <input type="submit" class="btn btn-info btn-sm" style="background-color: #279185;">
       </form>
       {% endif %}
