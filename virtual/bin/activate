@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/tharcissie/Desktop/Booklist/virtual"
+VIRTUAL_ENV="/home/wecode/Desktop/BookApp/virtual"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -3,17 +3,14 @@
 {% for book in book_list %}
 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
     <img src="{{ book.thumbnail }}" alt="{{ book.title }} poster" class="img-responsive">
-    <p>{{ book.id }}</p>
-    <!-- <p> <a href="{{book.webReaderLink}}">Link</a> </p> -->
-    <p> <a href="/book/{{book.id}}">Link</a> </p>
-    <p>{{book.book_description}}</p>
     {%  if book.author %}
     {% for author in book.author %}
-    <p style="color: red;">{{author}}</p>
+    <p style="font-weight: bold;">{{author}}</p>
     {% endfor %}
     {% else %}
     <p>author not provided</p>
     {% endif %}
+    <p> <a href="/book/{{book.id}}">View</a> </p>
 
 
 </div>
