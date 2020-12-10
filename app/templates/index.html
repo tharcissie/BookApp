@@ -4,57 +4,65 @@
 
 
 
-<div class="jumbotron p-5" style="margin-top: -20px; background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9va3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+<div class="jumbotron p-5" style="margin-top: -20px; background-image: url('https://previews.123rf.com/images/srapulsar38/srapulsar381408/srapulsar38140800082/30871711-the-open-book-on-other-multi-coloured-books-on-a-wooden-shelf-a-wooden-white-background-.jpg');
 background-position: center;
 background-size: cover;
-background-repeat: no-repeat;">
+height: 100vh;">
 
-<div class="m-5">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="p-5 text-light col-md-6" style="text-shadow: 1px 1px 1px black;">
+            <h1 class="display-4">Welcome to <span style="color: #2A9D8F;font-family: 'Langar', cursive;">BookApp</span>
+            </h1>
+            <hr>
+            <p class="lead">‎Read reviews, compare customer ratings, see screenshots, and learn more about Dreame - Read
+                Best Romance. Download Dreame - Read Best Romance and enjoy it on your iPhone, iPad, and iPod touch.
+                ‎Dreame
+                – Reading Completes Me. Dreame is a dreamy community for female readers and writers providing
+                captivating,
+                serialized online fiction.
+            </p>
+            <hr class="my-4">
+            <hr>
+
+            <p class="lead">
+                <a class="btn btn-lg text-white" href="#" role="button" style="background-color: #2A9D8F;">Learn
+                    more</a>
+            </p>
+        </div>
+    </div>
 </div>
-  </div>
 
-<!-- Science Book  -->
+<hr>
 
-<h3> Science Books </h3>
-<ul>
-    {{ macro.displayBookList(science)}}
-    
-</ul>
-<br>
-<br>
+<div style="background-color: #EDFAFD;">
 
-        
-<!-- Mathmatics Book -->
+    <div class="container">
 
-<h3> Computers Books</h3>
-<ul>
-    {{ macro.displayBookList(computers)}}
-</ul>
-<br> 
-<br>
+        <h3 class="p-1 text-white" style="background-color: #2A9D8F;"><span><i class="fas fa-book"></i></span> Science Books </h3>
+        <div class="row">
+            {{ macro.displayBookList(science)}}
+        </div>
+        <hr>
+        <h3 class="p-1 text-white" style="background-color: #2A9D8F;"><span><i class="fas fa-book"></i></span> Computer Books</h3>
+        <hr>
+        <div class="row">
+            {{ macro.displayBookList(computers)}}
+        </div>
+        <hr>
+        <h3 class="p-1 text-white" style="background-color: #2A9D8F;"><span><i class="fas fa-book"></i></span> Medical Books</h3>
+        <hr>
+        <div class="row">
+            {{ macro.displayBookList(fiction)}}
+        </div>
+        <hr>
+        <h3 class="p-1 text-white" style="background-color: #2A9D8F;"><span><i class="fas fa-book"></i></span> Romantic Books</h3>
+        <hr>
+        <div class="row">
+            {{ macro.displayBookList(romantic)}}
+        </div>
 
-<!-- Fiction Books-->
-
-<h3>Medical Books</h3>
-<ul>
-    {{ macro.displayBookList(fiction)}}
-</ul>
-
-<br>
-<br>
-
-<!-- Romantic Books-->
-
-<h3>Romantic Books</h3>
-<ul>
-    {{ macro.displayBookList(romantic)}}
-</ul>
+    </div>
+</div>
 
 {% endblock%}
