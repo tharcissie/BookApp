@@ -34,13 +34,11 @@
     {% if new_book %}
     
         {{macro.displayReviews(new_book)}}
-        <a class="btn btn-success btn-lg text-center" href="/book/review/new/{{book.id}}"> Write a new review</a>
-
+        
     {% else%}
         <h3 class="text-center" style="font-size: 0.8rem;">This book has no reviews </h3>
-
-        <a class="btn btn btn-lg text-center" href="/book/review/new/{{book.id}}" style="background-color: #2A9D8F;color: white;"> Write a new review</a>
     {% endif %}
+    <a class="btn btn btn-lg text-center" href="/book/review/new/{{book.id}}" style="background-color: #2A9D8F;color: white;"> Write a new review</a>
 </div>
 </div>
 </div>
