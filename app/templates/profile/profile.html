@@ -2,59 +2,53 @@
 
 {% block content %}
 <div class="container-fluid"
-  style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('https://res.cloudinary.com/zilfa/image/upload/v1607605992/eea-ikeda-cUBXdZaVm4Q-unsplash_f6dgpb.jpg');background-size: cover; height: 93.8vh; background-position:left bottom;margin-top: -0.10cm;">
+  style="background-image:url('https://res.cloudinary.com/zilfa/image/upload/v1607618297/link-hoang-UoqAR2pOxMo-unsplash_uaygjv.jpg');background-size: cover; height: 90.9vh; background-position:bottom; margin-top: -0.10cm;">
   <div class="row">
-    <!-- displaying  Username-->
-    <div class="col-md-4" style="margin-top: 280px;">
-      <blockquote
-        style="background: #f9f9f952;color: black;font-family: 'Times New Roman', Times, serif;text-align: center;width: 215px;margin-left: 1100px; height: 200px;">
-       <br>
-        <h3 style="font-size: 20px;"> <span style="font-weight: bold;"> Name: </span>{{user.username| capitalize}} </h3>
 
-        <!--Displaying user bio-->
-        {% if user.bio %}
-        <br>
-        <br>
+    <div class="col-md-4">
 
-
-        <p style="font-size: 20px;"><span style="font-weight: bold;">Bio: </span>{{user.bio}}</p>
-        {%else%}
-        <p> {{user.username| capitalize}} has no bio </p>
-        {% endif %}
-        {% if user == current_user %}
-
-
-        <br>
-        <br>
-        <br>
-      </blockquote>
-        <a class="btn btn-primary" style="margin-left: 1100px; width: 200px;"
-          href="{{url_for('main.update_profile',name=user.username)}}">Edit bio</a>
-        {% endif %}
-     
-    </div>
-
-
-    <div class="col-md-8" style="padding-left:660px;margin-top: 20px;">
       {% if user.profile_pic_path %}
-
       <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail"
-        style="width: 230px; height:150px;">
-
+        style="width: 370px;height: 280px;margin-top: 100px;">
       {%else%}
-      <p>No profile picture</p>
-
+      <p style="margin-top: 340px;">No profile picture</p>
       {% endif %}
-
       {% if user == current_user %}
       <form action="{{url_for('main.update_pic',name=user.username)}}" method="post" enctype="multipart/form-data">
-
-        <input type="file" style="width: 230px;" name="photo" class="form-control" required>
-        <input type="submit">
+        <input type="file" name="photo" class="form-control" style="width: 370px;" required>
+        <input type="submit" class="btn btn-info btn-sm" style="background-color: #279185;">
       </form>
       {% endif %}
     </div>
+    <!-- displaying  Username-->
+    <div class="col-md-2">
+      <div class="jumbotron" style="height: 272px; width: 160px;background-color: rgba(231, 225, 225, 0.479);margin-top: 100px;margin-left:-2.2cm">
+        <h3>
+          <p style="font-family: 'Times New Roman', Times, serif; font-weight: bold;font-size:18px">
+            Name:</span>
+          <ul> <span
+              style="font-family: 'Sansita Swashed', cursive; font-size: 18px;color: #279185;">{{user.username| capitalize}}
+            </span></ul>
+        </h3>
+        <hr style="border: 2px solid #279185;">
+        <br>
+        <!--Displaying user bio-->
+        {% if user.bio %}
+        <p> <span style="font-family: 'Times New Roman', Times, serif;font-weight: bold;">Bio:
+          </span>
+        <ul><span style="font-family: 'Sansita Swashed', cursive;font-size: 18px;color: #279185;">
+            {{user.bio}}</span></ul>
+        </p>
+        {%else%}
+        <p style="color: #279185;"> {{user.username| capitalize}} has no bio </p>
+        {% endif %}
 
+      </div>
+      {% if user == current_user %}
+      <a class="btn btn-primary" style="margin-top:-30px; width: 160px;margin-left: -2.2cm;height: 43.5px;background-color: #279185;border:none"
+        href="{{url_for('main.update_profile',name=user.username)}}">Edit bio</a>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% endblock %}

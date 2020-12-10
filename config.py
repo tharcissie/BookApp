@@ -3,7 +3,7 @@ import os
 class Config:
 
     BOOKS_URL = 'https://www.googleapis.com/books/v1/volumes?q={}'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://tharcissie:ntakarakorwa123@localhost/booklist'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123456@localhost/booklist'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 

@@ -68,8 +68,9 @@ def book(id):
     '''
     book = get_book(id)
     title = 'Book'
-    # reviews = Review.get_reviews(book.id)
-    return render_template('book.html',title = title,book = book)
+    book_reviews = Review.get_reviews(book.id)
+    print(book_reviews)
+    return render_template('book.html',title = title,book = book,new_book=book_reviews)
 
 @main.route('/book/review/new/<id>/', methods = ['GET','POST'])
 @login_required
