@@ -30,6 +30,7 @@ def create_app(configuration):
     bootstrap = Bootstrap(app)
     db.init_app(app)
     login_manager.init_app(app)
+    mail.init_app(app)
 
     # Registering the blueprint
     from .main import main as main_blueprint
