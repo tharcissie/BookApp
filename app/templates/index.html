@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+<!-- Content block -->
+
+{% block content %}
+
+<!-- Science Book  -->
+
+<h3> Science Books </h3>
+<ul>
+    {{ macro.displayBookList(science)}}
+    
+</ul>
+<br>
+<br>
+
+        
+<!-- Mathmatics Book -->
+
+<h3> Computers Books</h3>
+<ul>
+    {{ macro.displayBookList(computers)}}
+</ul>
+<br> 
+<br>
+
+<!-- Fiction Books-->
+
+<h3>Medical Books</h3>
+<ul>
+    {{ macro.displayBookList(fiction)}}
+</ul>
+
+<br>
+<br>
+
+<!-- Romantic Books-->
+
+<h3>Romantic Books</h3>
+<ul>
+    {{ macro.displayBookList(romantic)}}
+</ul>
+
+{% endblock%}
