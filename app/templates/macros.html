@@ -1,18 +1,11 @@
 {% macro displayBookList(book_list) %}
 
 {% for book in book_list %}
-<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-    <img src="{{ book.thumbnail }}" alt="{{ book.title }} poster" class="img-responsive">
-    {%  if book.author %}
-    {% for author in book.author %}
-    <p style="font-weight: bold;">{{author}}</p>
-    {% endfor %}
-    {% else %}
-    <p>author not provided</p>
-    {% endif %}
-    <p> <a href="/book/{{book.id}}">View</a> </p>
-
-
+<div class="p-3 m-2" style="background-color:white; box-shadow: 3px 1px 4px #838282;">
+    <img src="{{ book.thumbnail }}" alt="{{ book.title }} poster" class="img-responsive"><hr>
+    <p> {{book.title|truncate(10)}} </p>
+    <p><span style="color:#E76F51;"><i class="fas fa-eye"></i></span> {{book.page}}</p>
+    <p> <a class="btn btn-sm text-light" style="background-color: #2A9D8F;" href="/book/{{book.id}}">View More</a> </p>
 </div>
 {% endfor %}
 {% endmacro %}
